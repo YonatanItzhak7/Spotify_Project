@@ -60,7 +60,7 @@ let playlistarr = [
 ];
 let counter = 0;
 let newcounter =0;
-function printData() {
+function printSongsData() {
   document.getElementById(
     "main"
   ).innerHTML = `<h1 id="homepagetitle">Music List</h1> <div id="gifload" class="container d-flex justify-content-center"><img src="gif/disk1.gif"></div>`;
@@ -69,7 +69,7 @@ function printData() {
       res.forEach((item) => {
         document.getElementById(
           "main"
-        ).innerHTML += `<div class="card mb-3 w-100">
+        ).innerHTML += `<div class="card mb-3 w-100 bg-dark text-white">
       <div class="row g-0">
         <div class="col-md-4">
           <img src="${

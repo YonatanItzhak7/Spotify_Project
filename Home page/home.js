@@ -3,8 +3,9 @@ window.onload = () => {
     "main"
   ).innerHTML = `<div class="container d-flex justify-content-center"><img src="gif/disk1.gif"></div>`;
   setTimeout(() => {
-    printHomeData();
+    clickLogain();
   }, 850);
+
 };
 
 function openNav() {
@@ -18,13 +19,14 @@ function closeNav() {
   document.getElementById("main").style.marginLeft = "0";
 }
 function clickLogain() {
+  document.getElementById("menubtn").style.display ="none"
   document.getElementById("main").innerHTML = `
   <section class="vh-100 gradient-custom">
-  <div class="container py-5 h-100">
+  <div id="logindiv" class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-12 col-md-8 col-lg-6 col-xl-5">
         <div class="card bg-dark text-white" style="border-radius: 1rem;">
-          <div class="card-body p-5 text-center">
+          <div class="card-body p-2 text-center">
           <h1><i onclick="clickClose()" class="bi bi-x-octagon-fill d-flex justify-content-end"></i></h1>
             <div class="mb-md-5 mt-md-4 pb-5">
 
@@ -32,7 +34,7 @@ function clickLogain() {
               <p class="text-white-50 mb-5">Please enter your Username and password!</p>
 
               <div class="form-outline form-white mb-4">
-                <input type="text" id="typeEmailX" class="form-control form-control-lg" />
+                <input type="text" id="textusername" class="form-control form-control-lg" />
                 <label class="form-label" for="typeEmailX">Username</label>
               </div>
 
@@ -52,16 +54,18 @@ function clickLogain() {
 `;
 }
 function userLogin(){
+  let userName = document.getElementById('textusername').value
   clickClose()
   document.getElementById("useronline").innerHTML = `
 <div class="btn-group">
   <button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-    Hi! Yonatan
+    Hi! ${userName}
   </button>
   <ul class="dropdown-menu">
     <li><a onclick="logout()" bg-danger class="dropdown-item">Logout <i class="bi bi-emoji-smile-upside-down-fill"></i></a></li>
   </ul>
 </div>`
+printHomeData()
 }
 function logout(){
   document.getElementById("useronline").innerHTML = ''
@@ -72,6 +76,7 @@ function clickClose() {
 }
 
 function printHomeData() {
+  document.getElementById("menubtn").style.display ="block"
   document.getElementById(
     "main"
   ).innerHTML = `<div class="d-flex justify-content-center">
@@ -87,7 +92,7 @@ function printHomeData() {
       <h2 id="homepagetitle">Good Afternoon</h2>
       <div class="container">
         <div id="mainrow" class="row">
-          <div class="col-4 d-flex justify-content-center">
+          <div class="col-4 d-flex justify-content-center" onclick="dataPopUp(0)">
             <div class="card mb-3 w-80">
               <div class="row g-0">
                 <div class="col-md-4">
@@ -102,7 +107,7 @@ function printHomeData() {
               </div>
             </div>
           </div>
-          <div class="col-4 d-flex justify-content-center">
+          <div class="col-4 d-flex justify-content-center" onclick="dataPopUp(1)">
             <div class="card mb-3 w-80">
               <div class="row g-0">
                 <div class="col-md-4">
@@ -117,7 +122,7 @@ function printHomeData() {
               </div>
             </div>
           </div>
-          <div class="col-4 d-flex justify-content-center">
+          <div class="col-4 d-flex justify-content-center" onclick="dataPopUp(2)">
             <div class="card mb-3 w-80">
               <div class="row g-0">
                 <div class="col-md-4">
@@ -132,7 +137,7 @@ function printHomeData() {
               </div>
             </div>
           </div>
-          <div class="col-4 d-flex justify-content-center">
+          <div class="col-4 d-flex justify-content-center" onclick="dataPopUp(3)">
             <div class="card mb-3 w-80">
               <div class="row g-0">
                 <div class="col-md-4">
@@ -147,7 +152,7 @@ function printHomeData() {
               </div>
             </div>
           </div>
-          <div class="col-4 d-flex justify-content-center">
+          <div class="col-4 d-flex justify-content-center" onclick="dataPopUp(4)">
             <div class="card mb-3 w-80">
               <div class="row g-0">
                 <div class="col-md-4">
@@ -162,7 +167,7 @@ function printHomeData() {
               </div>
             </div>
           </div>
-          <div class="col-4 d-flex justify-content-center">
+          <div class="col-4 d-flex justify-content-center" onclick="dataPopUp(5)">
             <div class="card mb-3 w-80">
               <div class="row g-0">
                 <div class="col-md-4">
@@ -182,44 +187,40 @@ function printHomeData() {
       <h2 id="homepagetitle">Yourtop mixtape</h2>
       <div class="container">
         <div class="row">
-          <div class="col-md-3 col-sm-12 g-5">
+          <div class="col-md-3 col-sm-12 g-5" onclick="dataPopUp(6)">
             <div class="card w-80">
               <img src="https://images.complex.com/complex/images/c_fill,dpr_auto,f_auto,q_90,w_1400/fl_lossy,pg_1/travis-scott-album-cover-2016_omwibv/travis-scott-album-cover-2016"
               class="card-img-top" alt="...">
               <div class="card-body">
                 <h4 class="card-title">Hiphop Mix</h4>
                 <h6 class="card-text">YG,Travis Scott,Young Thug and more...</h6>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
               </div>
             </div>
           </div>
-          <div class="col-md-3 col-sm-12 g-5">
+          <div class="col-md-3 col-sm-12 g-5" onclick="dataPopUp(7)">
             <div class="card w-80">
               <img src="https://media.pitchfork.com/photos/5fa6fce323b17a901fd1ec65/1:1/w_600/Wizkid.jpg"
               class="card-img-top" alt="...">              <div class="card-body">
                 <h4 class="card-title">Afrobeat Mix</h4>
                 <h6 class="card-text">Wiz kid,Ruger, Burna boy and more...</h6>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
               </div>
             </div>
           </div>
-          <div class="col-md-3 col-sm-12 g-5">
+          <div class="col-md-3 col-sm-12 g-5" onclick="dataPopUp(8)">
             <div class="card w-80">
               <img src="https://i.ebayimg.com/images/g/fTMAAOSwWJlfKYCh/s-l400.jpg"
               class="card-img-top" alt="...">              <div class="card-body">
                 <h4 class="card-title">Rap Mix</h4>
                 <h6 class="card-text">Eminem,2Pac,Big notorious and more...</h6>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
               </div>
             </div>
           </div>
-          <div class="col-md-3 col-sm-12 g-5">
+          <div class="col-md-3 col-sm-12 g-5" onclick="dataPopUp(9)">
             <div class="card w-80">
               <img src="https://i.scdn.co/image/ab67616d00001e02c3b8934ffe9065c45b9914ab"
               class="card-img-top" alt="...">              <div class="card-body">
                 <h4 class="card-title">Dancehall Mix</h4>
                 <h6 class="card-text">Popcaan,vybz kartel,spice and more...</h6>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
               </div>
             </div>
           </div>
@@ -228,49 +229,78 @@ function printHomeData() {
       <h2 id="homepagetitle">Albums</h2>
       <div class="container">
         <div class="row">
-          <div class="col-md-3 col-sm-12 g-5">
+          <div class="col-md-3 col-sm-12 g-5" onclick="dataPopUp(10)">
             <div class="card w-80">
               <img src="https://upload.wikimedia.org/wikipedia/en/3/33/Chris_Brown_-_Breezy.png"
               class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title">Breezy</h5>
                 <p class="card-text">2022 • Album</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
               </div>
             </div>
           </div>
-          <div class="col-md-3 col-sm-12 g-5">
+          <div class="col-md-3 col-sm-12 g-5" onclick="dataPopUp(11)">
             <div class="card w-80">
               <img src="https://upload.wikimedia.org/wikipedia/he/1/1f/Chris_Brown_-_Indigo.png"
               class="card-img-top" alt="...">              <div class="card-body">
                 <h5 class="card-title">Indigo</h5>
                 <p class="card-text">2019 • Album</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
               </div>
             </div>
           </div>
-          <div class="col-md-3 col-sm-12 g-5">
+          <div class="col-md-3 col-sm-12 g-5" onclick="dataPopUp(12)">
             <div class="card w-80">
               <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Royalty_Chris_Brown.jpg"
               class="card-img-top" alt="...">              <div class="card-body">
                 <h5 class="card-title">Royalty</h5>
                 <p class="card-text">2015 • Album</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
               </div>
             </div>
           </div>
-          <div class="col-md-3 col-sm-12 g-5">
+          <div class="col-md-3 col-sm-12 g-5" onclick="dataPopUp(13)">
             <div class="card w-80">
               <img src="https://upload.wikimedia.org/wikipedia/en/c/ce/Chris_brown.jpg"
               class="card-img-top" alt="...">              <div class="card-body">
                 <h5 class="card-title">Chris Brown</h5>
                 <p class="card-text">2005 • Album</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
               </div>
             </div>
           </div>
       </div>
 `;
+}
+
+let popUpArray = [
+`<iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/26kJC1nv4s6lOAjNiRILoT?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>`,
+`<iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/78JORPgpM9FU2gMHtbthaq?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>`,
+`<iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/6URnbR6SZsQmhopg3x68ea?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>`,
+`<iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/47Thm1tltjJVofuRumhfmi?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>`,
+`<iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/261LWEVYViMXijB95mAty3?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>`,
+`<iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/79WcTJuCulopfqul1awYJk?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>`,
+`<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/5TZkls9cEOzWDR6qCxwDot?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>`,
+`<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/7IfWkPjxjtGpHKzvbZd8YV?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>`,
+`<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/61XfJpLK4KVFFBsjkbzNlW?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>`,
+`<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/1AKuDAKQOUSbQ8KKJkrlMi?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>`,
+`<iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/31U6s6obQrBLTqyvqfqzlM?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>`,
+`<iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/1BfLzaTFI5qKsAAk0Ae6aV?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>`,
+`<iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/0VWmEVuQ8tA5iA3cCTrgxa?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>`,
+`<iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/49gaz5rhWWgqCw61M9700v?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>`
+]
+
+function dataPopUp(id){
+  document.getElementById("overlay").style.display="block";
+  document.getElementById("overlay").innerHTML = `
+  <div class="h-100 w-100 d-flex justify-content-center align-items-center">
+  <div>
+  ${popUpArray[id]}
+  <button onclick="closePopUp()">Close</button>
+</div>
+  </div>
+  `
+}
+
+function closePopUp(){
+  document.getElementById("overlay").style.display="none"
 }
 
 
