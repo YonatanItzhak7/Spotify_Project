@@ -48,7 +48,8 @@ body {
   }
   
   .sidebar a:hover {
-    color: #f1f1f1;
+    color: red;
+    font-size: 33px;
   }
   
   .sidebar .closebtn {

@@ -20,6 +20,7 @@ function closeNav() {
 }
 function clickLogain() {
   document.getElementById("menubtn").style.display ="none"
+  document.getElementById("weather").style.display ="none"
   document.getElementById("main").innerHTML = `
   <section class="vh-100 gradient-custom">
   <div id="logindiv" class="container py-5 h-100">
@@ -68,14 +69,33 @@ function userLogin(){
 printHomeData()
 }
 function logout(){
+  window.location.reload();
   document.getElementById("useronline").innerHTML = ''
 }
 function clickClose() {
-  document.getElementById("main").innerHTML = ''
-  printHomeData()
+  document.getElementById("main").innerHTML = 
+  `
+  <div class="alert alert-danger" role="alert">
+  <h2 class="alert-heading">Warning!</h2>
+  <h4>only registered users can access the app!</h4>
+  <h5>Please register or connect to the app</h5>
+  <button type="button" class="btn btn-dark" onclick="warningButton()">Go Back!</button>
+  </div>
+  `
+}
+function warningButton(){
+  document.getElementById(
+    "main"
+  ).innerHTML = `<div class="container d-flex justify-content-center"><img src="gif/disk1.gif"></div>`;
+  setTimeout(()=>{
+    clickLogain()
+  },850)
 }
 
 function printHomeData() {
+  document.getElementById('main').innerHTML = `<div id="gifload" class="container d-flex justify-content-center"><img src="gif/disk1.gif"></div>`
+  setTimeout(()=>{
+    document.getElementById("weather").style.display ="block"
   document.getElementById("menubtn").style.display ="block"
   document.getElementById(
     "main"
@@ -89,7 +109,7 @@ function printHomeData() {
             <div onclick="clicknext()"><i class="bi bi-skip-end-btn-fill"></i></div>
         </div>
       </div>
-      <h2 id="homepagetitle">Good Afternoon</h2>
+      <h2 id="homepagetitle" id="changetitle">Good Afternoon</h2>
       <div class="container">
         <div id="mainrow" class="row">
           <div class="col-4 d-flex justify-content-center" onclick="dataPopUp(0)">
@@ -267,8 +287,26 @@ function printHomeData() {
             </div>
           </div>
       </div>
-`;
+      `;
+    },850)
 }
+
+
+// printRndDate();
+// function changeTitle(){
+//   let title = document.getElementById('changetitle').value
+//   let newDate = Date()
+//   let dateMin = newDate.getMinutes();
+//   let dateHours = newDate.getHours();
+//   if(dateHours>4){
+//     title.innerHTML = "Good Morning"
+//   }
+//   else{
+//     "Bye Bye"
+//   }
+//   console.log(newDate.getMinutes())
+// }
+// changeTitle()
 
 let popUpArray = [
 `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/26kJC1nv4s6lOAjNiRILoT?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>`,

@@ -16,11 +16,9 @@ async function getDataApi2() {
 getDataApi2();
 
 function printLyricsData() {
-  document.getElementById(
-    "main"
-  ).innerHTML = `<h1 id="homepagetitle">Music Lyrics</h1> <div id="gifload" class="container d-flex justify-content-center"><img src="gif/disk1.gif"></div>`;
-  document.getElementById('main').innerHTML = `<h1 id="homepagetitle">Music Lyrics</h1><div class="container"><div id="main_row" class="row justify-content-center"></div></div>`
+  document.getElementById('main').innerHTML = `<h1 id="homepagetitle">Music Lyrics</h1> <div id="gifload" class="container d-flex justify-content-center"><img src="gif/disk1.gif"></div>`;
   setTimeout(() => {
+    document.getElementById('main').innerHTML = `<h1 id="homepagetitle">Music Lyrics</h1><div class="container"><div id="main_row" class="row justify-content-center"></div></div>`
     getDataApi2().then((res) => {
       res.response.songs.forEach((item) => {
         document.getElementById("main_row").innerHTML += `
