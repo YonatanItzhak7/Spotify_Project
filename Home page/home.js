@@ -109,7 +109,7 @@ function printHomeData() {
             <div onclick="clicknext()"><i class="bi bi-skip-end-btn-fill"></i></div>
         </div>
       </div>
-      <h2 id="homepagetitle" id="changetitle">Good Afternoon</h2>
+      <h2 id="homepagetitle" id="changetitle">Good Afte68rnoon</h2>
       <div class="container">
         <div id="mainrow" class="row">
           <div class="col-4 d-flex justify-content-center" onclick="dataPopUp(0)">
@@ -132,7 +132,7 @@ function printHomeData() {
               <div class="row g-0">
                 <div class="col-md-4">
                   <img
-                    src="https://ssla.ulximg.com/image/547x547/cover/1658467684_f356a4a403c581e49f6fbefcad1cd4c4.jpg/badedcb595164f1b9b5adc3a20766c43/1658467684_b857f34e9e8995b3d7ddd05a5666f2e7.jpg"
+                    src=""
                     class="img-fluid rounded-start"
                   />
                 </div>
@@ -237,7 +237,7 @@ function printHomeData() {
           </div>
           <div class="col-md-3 col-sm-12 g-5" onclick="dataPopUp(9)">
             <div class="card w-80">
-              <img src="https://i.scdn.co/image/ab67616d00001e02c3b8934ffe9065c45b9914ab"
+              <img 
               class="card-img-top" alt="...">              <div class="card-body">
                 <h4 class="card-title">Dancehall Mix</h4>
                 <h6 class="card-text">Popcaan,vybz kartel,spice and more...</h6>
@@ -345,10 +345,10 @@ function closePopUp(){
 let myImgArr = [
   "https://ssl.ulximg.com/image/330x330/cover/1632492854_97cff3b459422293a86e0f45f443192f.jpg/2e7c85b1cf493b890c4034fd6568e0ea/1632492854_e0c46a8292cb8a80e716793256c03aaa.jpg",
   "https://upload.wikimedia.org/wikipedia/en/a/a4/Royalty_Chris_Brown.jpg",
-  "https://upload.wikimedia.org/wikipedia/en/c/ce/Chris_brown.jpg",
+  // "https://upload.wikimedia.org/wikipedia/en/c/ce/Chris_brown.jpg",
   "https://images.complex.com/complex/images/c_fill,dpr_auto,f_auto,q_90,w_1400/fl_lossy,pg_1/travis-scott-album-cover-2016_omwibv/travis-scott-album-cover-2016",
-  "https://media.pitchfork.com/photos/5fa6fce323b17a901fd1ec65/1:1/w_600/Wizkid.jpg",
-  "https://i.ebayimg.com/images/g/fTMAAOSwWJlfKYCh/s-l400.jpg",
+  // "https://media.pitchfork.com/photos/5fa6fce323b17a901fd1ec65/1:1/w_600/Wizkid.jpg",
+  // "https://i.ebayimg.com/images/g/fTMAAOSwWJlfKYCh/s-l400.jpg",
   "https://i.scdn.co/image/ab67616d00001e02c3b8934ffe9065c45b9914ab",
   "https://upload.wikimedia.org/wikipedia/en/3/33/Chris_Brown_-_Breezy.png",
   "https://upload.wikimedia.org/wikipedia/he/1/1f/Chris_Brown_-_Indigo.png",
