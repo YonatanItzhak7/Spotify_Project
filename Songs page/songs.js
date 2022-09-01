@@ -80,7 +80,7 @@ function printSongsData() {
           <div class="card-body">
             <h5 class="card-title">${item[1]}</h5>
             <p class="card-text">${item[0]}</p>
-            <p class="card-text"></small>${playlistarr[newcounter++]}</p>
+            <p class="card-text">${playlistarr[newcounter++]}</p>
           </div>
         </div>
       </div>

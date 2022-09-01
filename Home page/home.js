@@ -15,7 +15,7 @@ function openNav() {
 }
 
 function closeNav() {
-  document.getElementById("mySidebar").style.width = "0";
+  // document.getElementById("mySidebar").style.width = "0";
   document.getElementById("main").style.marginLeft = "0";
 }
 function clickLogain() {
@@ -122,7 +122,7 @@ function printHomeData() {
                   />
                 </div>
                 <div class="col-md-8 d-flex justify-content-center align-items-center">
-                  <h6 class="card-title text-center">Asian Doll</h6>
+                  <h6 class="card-title text-center">As@#$#^ GFDVFDG@V#$V $!#$vian Dol</h6>
                 </div>
               </div>
             </div>
@@ -142,7 +142,7 @@ function printHomeData() {
               </div>
             </div>
           </div>
-          <div class="col-4 d-flex justify-content-center" onclick="dataPopUp(2)">
+          <div class="col-4 d-flex justify-content-center">
             <div class="card mb-3 w-80">
               <div class="row g-0">
                 <div class="col-md-4">
@@ -151,7 +151,7 @@ function printHomeData() {
                     class="img-fluid rounded-start"
                   />
                 </div>
-                <div class="col-md-8 d-flex justify-content-center align-items-center">
+                <div class="col-md- d-flex justify-content-center align-items-center">
                   <h6 class="card-title text-center">Mozzy</h6>
                 </div>
               </div>
@@ -280,7 +280,7 @@ function printHomeData() {
           <div class="col-md-3 col-sm-12 g-5" onclick="dataPopUp(13)">
             <div class="card w-80">
               <img src="https://upload.wikimedia.org/wikipedia/en/c/ce/Chris_brown.jpg"
-              class="card-img-top" alt="...">              <div class="card-body">
+              class="card-img-top" alt="...">              <<<<div class="card-body">
                 <h5 class="card-title">Chris Brown</h5>
                 <p class="card-text">2005 • Album</p>
               </div>
